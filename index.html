@@ -1,0 +1,187 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>みぃのアイプリ｜PASSWORD</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family:
+                "Yu Gothic",
+                "Hiragino Kaku Gothic ProN",
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff4fa,
+                    #eefcff
+                );
+        }
+
+        .password-box {
+            width: min(90%, 420px);
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(180, 160, 190, 0.2);
+
+            border:
+                2px solid #f3c9df;
+        }
+
+        .password-box h1 {
+            margin: 0;
+
+            color: #e58bb7;
+
+            font-size: 26px;
+        }
+
+        .password-box p {
+            color: #79c6d5;
+
+            line-height: 1.7;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 14px;
+
+            border:
+                2px solid #d9edf1;
+
+            border-radius: 20px;
+
+            outline: none;
+
+            text-align: center;
+
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ee9bc4,
+                    #8ed6e4
+                );
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        #error {
+            display: none;
+
+            color: #e78bad;
+
+            margin-top: 15px;
+
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="password-box">
+
+        <h1>みぃのアイプリ</h1>
+
+        <p>
+            FRIENDS ONLY<br>
+            パスワードを入力してください
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="PASSWORD"
+        >
+
+        <button onclick="checkPassword()">
+            ENTER
+        </button>
+
+        <p id="error">
+            パスワードが違います。
+        </p>
+
+    </div>
+
+
+    <script>
+
+        function checkPassword() {
+
+            const password =
+                document.getElementById("password").value;
+
+            /*
+             * 0805
+             */
+            const correctPassword = "0805";
+
+
+            if (password === correctPassword) {
+
+                window.location.href = "home.html";
+
+            } else {
+
+                document.getElementById("error")
+                    .style.display = "block";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
